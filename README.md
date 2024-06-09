@@ -51,17 +51,17 @@ GC2 sends the formatted data to the clearing body.
 GC2 also converts and sends data from the clearing body back to the bank as needed.
 
 # Technical Stack
-Java,
-Spring Boot,
-Oracle Database,
-Kafka,
-Cucumber for Test Cases,
-Spring Event Handling,
-High Asynchronous Handling (JMS),
-Jenkins (Jules),
-Kubernetes for Deployment,
-Channel-Specific Development,
+Java.
+Spring Boot.
+Oracle Database.
+Kafka.
+Cucumber for Test Cases.
+Spring Event Handling.
+High Asynchronous Handling (JMS).
+Jenkins (Jules).
+Kubernetes for Deployment.
 
+# Channel-Specific Development
 For each payment channel (e.g., NEFT, IMPS in India), new code and entries will be created. Existing code will be
 leveraged and tested for compatibility with the requirements of each country's clearing system. Any gaps identified will
 be addressed.
@@ -70,27 +70,27 @@ be addressed.
 
 # China:
 
-CNAPS (China National Advanced Payment System),
-CIPS (Cross-Border Interbank Payment System),
-Internet Banking Payment System (IBPS)
+CNAPS (China National Advanced Payment System).
+CIPS (Cross-Border Interbank Payment System).
+Internet Banking Payment System (IBPS).
 
 # Malaysia:
 
-RENTAS (Real-time Electronic Transfer of Funds and Securities System),
-FPX (Financial Process Exchange),
-IBG (Interbank GIRO)
+RENTAS (Real-time Electronic Transfer of Funds and Securities System).
+FPX (Financial Process Exchange).
+IBG (Interbank GIRO).
 
 # Australia:
 
-RITS (Reserve Bank Information and Transfer System),
-BECS (Bulk Electronic Clearing System),
-NPP (New Payments Platform)
+RITS (Reserve Bank Information and Transfer System).
+BECS (Bulk Electronic Clearing System).
+NPP (New Payments Platform).
 
 # Governing Bodies
-India: Reserve Bank of India (RBI),
-China: People's Bank of China (PBOC),
-Malaysia: Bank Negara Malaysia (BNM),
-Australia: Reserve Bank of Australia (RBA)
+India: Reserve Bank of India (RBI).
+China: People's Bank of China (PBOC).
+Malaysia: Bank Negara Malaysia (BNM).
+Australia: Reserve Bank of Australia (RBA).
 
 # Summary
 GC2 is designed to facilitate seamless international and domestic transactions by interfacing with various clearing
