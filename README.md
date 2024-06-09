@@ -28,10 +28,9 @@ which have their own formats and standards.
 
 # Example Process
 
-1.Initiating a Payment:
-
-Ramesh transfers an amount from SBI to Suresh in HDFC.
-A channel must facilitate HDFC receiving the amount.
+1. Initiating a Payment:
+   Ramesh transfers an amount from SBI to Suresh in HDFC.
+   A channel must facilitate HDFC receiving the amount.
 
 2. Validation by Receiving Bank (HDFC):
    Eligibility of the sender.
@@ -52,44 +51,45 @@ GC2 sends the formatted data to the clearing body.
 GC2 also converts and sends data from the clearing body back to the bank as needed.
 
 # Technical Stack
-Java
-Spring Boot
-Oracle Database
-Kafka
-Cucumber for Test Cases
-Spring Event Handling
-High Asynchronous Handling (JMS)
-Jenkins (Jules)
-Kubernetes for Deployment
-Channel-Specific Development
+Java,
+Spring Boot,
+Oracle Database,
+Kafka,
+Cucumber for Test Cases,
+Spring Event Handling,
+High Asynchronous Handling (JMS),
+Jenkins (Jules),
+Kubernetes for Deployment,
+Channel-Specific Development,
+
 For each payment channel (e.g., NEFT, IMPS in India), new code and entries will be created. Existing code will be
 leveraged and tested for compatibility with the requirements of each country's clearing system. Any gaps identified will
 be addressed.
 
-## Clearing Bodies and Channels by Country
+# Clearing Bodies and Channels by Country
 
 # China:
 
-CNAPS (China National Advanced Payment System)
-CIPS (Cross-Border Interbank Payment System)
+CNAPS (China National Advanced Payment System),
+CIPS (Cross-Border Interbank Payment System),
 Internet Banking Payment System (IBPS)
 
 # Malaysia:
 
-RENTAS (Real-time Electronic Transfer of Funds and Securities System)
-FPX (Financial Process Exchange)
+RENTAS (Real-time Electronic Transfer of Funds and Securities System),
+FPX (Financial Process Exchange),
 IBG (Interbank GIRO)
 
 # Australia:
 
-RITS (Reserve Bank Information and Transfer System)
-BECS (Bulk Electronic Clearing System)
+RITS (Reserve Bank Information and Transfer System),
+BECS (Bulk Electronic Clearing System),
 NPP (New Payments Platform)
 
 # Governing Bodies
-India: Reserve Bank of India (RBI)
-China: People's Bank of China (PBOC)
-Malaysia: Bank Negara Malaysia (BNM)
+India: Reserve Bank of India (RBI),
+China: People's Bank of China (PBOC),
+Malaysia: Bank Negara Malaysia (BNM),
 Australia: Reserve Bank of Australia (RBA)
 
 # Summary
