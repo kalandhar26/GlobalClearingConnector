@@ -1,13 +1,52 @@
 # Communication Flow Overview
 
-## Connection Profiles
+# Data Tables for Connectivity Profile and Message Workflow
 
-| Profile ID             | Type   | Description                    |
-|------------------------|--------|--------------------------------|
-| IND-FA-IRCT-C001       | Kafka  | From Plutus to GC2             |
-| IND-FA-IRCT-C002       | MQ     | From GC2 to Clearing           |
-| IND-FA-RRCT-C001       | MQ     | From Clearing to GC2           |
-| IND-FA-RRCT-C002       | Kafka  | From GC2 to Plutus             |
+## Table - Connectivity Profile
+
+| Profile ID       | Type  | Description          |
+|------------------|-------|----------------------|
+| IND-FA-IRCT-C001 | Kafka | From Plutus to GC2   |
+| IND-FA-IRCT-C002 | MQ    | From GC2 to Clearing |
+| IND-FA-RRCT-C001 | MQ    | From Clearing to GC2 |
+| IND-FA-RRCT-C002 | Kafka | From GC2 to Plutus   |
+
+## Table - Message Profile
+
+| Profile ID       | Type | Parent           | ConnectionProfileID | Description          |
+|------------------|------|------------------|---------------------|----------------------|
+| IND-FA-IRCT-M001 | JSON |                  | IND-FA-IRCT-C001    | From Plutus to GC2   |
+| IND-FA-IRCT-M002 | XML  | IND-FA-IRCT-M001 | IND-FA-IRCT-C002    | From GC2 to Clearing |
+| IND-FA-RRCT-M001 | XML  |                  | IND-FA-RRCT-C001    | From Clearing to GC2 |
+| IND-FA-RRCT-M002 | JSON | IND-FA-RRCT-M001 | IND-FA-RRCT-C002    | From GC2 to Plutus   |
+
+## Table - Inbound Payload
+
+| InboundPayLoadID | Payload - BLOB | ConnectivityProfileID | WorkflowID |
+|------------------|----------------|-----------------------|------------|
+| IP1              | JSON RAW DATA  | IND-FA-IRCT-C001      | W1         |
+| IP2              | XML RAW DATA   | IND-FA-RRCT-C001      | W2         |
+
+## Table - Inbound WorkFlow Item
+
+| WorkFlowID | Message ID       | Source Reference | Unique ID | Status             |
+|------------|------------------|------------------|-----------|--------------------|
+| W1         | IND-FA-IRCT-M001 | F112345          | F112345   | Created / Accepted |
+| W2         | IND-FA-RRCT-M001 | TRAN456          |           | Created / Accepted |
+
+## Table - Outbound WorkFlow Item
+
+| OutboundWorkflowID | WorkflowID | Target Reference | MessageID | Transaction ID | Outbound Payload ID | Status               | Message ProfileID |
+|--------------------|------------|------------------|-----------|----------------|---------------------|----------------------|-------------------|
+| OWID1              | W1         | TRAN123          | MESSID123 | TRAN123        | OP1                 | Ready to send / Sent | IND-FA-IRCT-M002  |
+| OWID2              | W2         | FR12345          | MESSID456 | TRAN456        | OP2                 | Ready to send / Sent | IND-FA-RRCT-M002  |
+
+## Table - Outbound Payload
+
+| Outbound Payload ID | Payload       | Connectivity Profile ID |
+|---------------------|---------------|-------------------------|
+| OP1                 | XML RAW DATA  | IND-FA-IRCT-C002        |
+| OP2                 | JSON RAW DATA | IND-FA-RRCT-C002        |
 
 ## Tables
 
@@ -134,17 +173,69 @@
     - Log errors in the `WorkFlowError Table` when necessary.
 
 4. **Status Updates and Transformations**:
-    - Once the status changes from "Created" to "Accepted" in the `InboundWorkFlowItem Table`, update the `InboundPayload Table` with the `WorkflowID`.
+    - Once the status changes from "Created" to "Accepted" in the `InboundWorkFlowItem Table`, update
+      the `InboundPayload Table` with the `WorkflowID`.
     - Transform data using the C24 tool library.
 
 ## Example JSON to XML Transformation
 
-### JSON Input
+# Data Exchange Between Plutus, GC2, and Clearing
+
+#### IRCT Flow from Plutus to Clearing
+
+### JSON Input (from Plutus to GC2)
 
 ```json
 {
-    "FirmrootId": "F1112345",
-    "Amount": 100000,
-    "Message_ID": "MESSID123",
-    "Transaction_ID": "TRAN123"
+  "FirmrootId": "F1112345",
+  "Amount": 100000,
+  "Message_ID": "MESSID123",
+  "Transaction_ID": "TRAN123"
 }
+```
+
+### XML - ISO RAW DATA (From GC2 to Clearing)
+
+```xml
+
+<XML>
+    <HEADER>
+        <MessageID>MESSID123</MessageID>
+    </HEADER>
+    <DOCUMENT>
+        <MessageID>MESSID123</MessageID>
+        <TransactionID>TRAN123</TransactionID>
+    </DOCUMENT>
+</XML>
+```
+
+#### RRCT Flow from Clearing to GC2
+
+### XML RAW DATA (From Clearing to GC2)
+
+```xml
+
+<XML>
+    <HEADER>
+        <MessageID>MESSID456</MessageID>
+    </HEADER>
+    <DOCUMENT>
+        <MessageID>MESSID456</MessageID>
+        <TransactionID>TRAN456</TransactionID>
+    </DOCUMENT>
+</XML>
+```
+
+### JSON RAW DATA (From GC2 to Plutus)
+
+```json
+{
+  "FirmrootId": "F1112456",
+  "Amount": 100000,
+  "Message_ID": "MESSID456",
+  "Transaction_ID": "TRAN456"
+}
+```
+
+
+
