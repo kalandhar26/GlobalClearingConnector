@@ -66,13 +66,13 @@ Then User should be able to see "Invalid Credentials".
 ```
 
 ### Ghirkin Language Structure
-Feature: Description of the User Story.
-Background: Common steps across all scenarios.
-Scenario: Multiple scenarios within a feature.
-Given: Pre-condition of the scenario.
-When: Action to be taken as part of the scenario.
-And: Used for multiple preconditions or actions.
-Then: Expected result of the action.
+**Feature:** Description of the User Story.  
+**Background:** Common steps across all scenarios.  
+**Scenario:** Multiple scenarios within a feature.  
+**Given:** Pre-condition of the scenario.  
+**When:** Action to be taken as part of the scenario.  
+**And:** Used for multiple preconditions or actions.  
+**Then:** Expected result of the action.  
 
 ### Scenario Outline and Examples
 When testing the same scenario with multiple data sets, use "Scenario Outline" and "Examples."
@@ -283,8 +283,9 @@ public class Hooks {
 ```Cucumber Options
 glue = {"stepdefinitions", "package where hook class is organized"}
 ```
-#### Dry Run in Cucumber Projects
-### Dry Run Options
+
+### Dry Run in Cucumber Projects
+## Dry Run Options
 dryRun = true: Steps will not invoke their step definition methods. It checks for unimplemented steps.
 dryRun = false: Steps will invoke their implemented methods.
 
