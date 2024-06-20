@@ -286,7 +286,7 @@ glue = {"stepdefinitions", "package where hook class is organized"}
 
 ### Dry Run in Cucumber Projects
 ## Dry Run Options
-**dryRun = true:** Steps will not invoke their step definition methods. It checks for unimplemented steps.
+**dryRun = true:** Steps will not invoke their step definition methods. It checks for unimplemented steps.  
 **dryRun = false:** Steps will invoke their implemented methods.
 
 #### Publishing Cucumber Reports
@@ -298,7 +298,7 @@ public class TestRunner {
 }
 ```
 ### Using Properties File
-- Set the following in **cucumber.properties** or **junit-platform.properties**(located in src/test/resources)
+- Set the following in **cucumber.properties** or **junit-platform.properties** (located in src/test/resources)
 ```cucumber.properties
 cucumber.publish.enabled = true
 ```
