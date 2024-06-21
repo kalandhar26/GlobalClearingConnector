@@ -1,8 +1,8 @@
-##### Kafka Introduction
+# Kafka Introduction
 
 Kafka, at its core, is a high-throughput, low-latency platform designed for handling real-time data feeds.
 
-#### Key Concepts of Kafka
+## Key Concepts of Kafka
 
 ### Topics
 
@@ -64,7 +64,7 @@ A partition has zero or more followers.
 - Data in Kafka is written to disk and can be replicated across multiple brokers.
 - Configurable retention policies for topics (e.g., retain data for a certain period).
 
-- ### High Availability:
+### High Availability:
 - Kafka's architecture ensures high availability and fault tolerance.
 - Leader-follower model for partitions ensures data redundancy.
 
@@ -73,7 +73,7 @@ A partition has zero or more followers.
 - Kafka can handle hundreds of gigabytes of reads and writes per second from thousands of clients.
 - Partitions allow horizontal scaling of topics across multiple brokers.
 
-#### Common Use Cases
+## Common Use Cases
 
 ### Messaging:
 
