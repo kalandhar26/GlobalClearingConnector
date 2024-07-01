@@ -1,0 +1,11 @@
+<Message>
+    <originBank>HDFC</originBank>
+    <originCountry>India</originCountry>
+    <clearing>RBI</clearing>
+    <destinationBank>NPP</destinationBank>
+    <destinationCountry>Australia</destinationCountry>
+    <MessageId>HDFCTONPPMSGID001</MessageId>
+    <TransactionId>HDFCTONPPTRNID001</TransactionId>
+    <FirmrootId>HDFCTONPPFRID001</FirmrootId>
+    <TransactionType>Imps</TransactionType>
+</Message>

@@ -1,0 +1,11 @@
+<Message>
+    <originBank>HDFC</originBank>
+    <originCountry>India</originCountry>
+    <clearing>RBI</clearing>
+    <destinationBank>SBI</destinationBank>
+    <destinationCountry>India</destinationCountry>
+    <MessageId>HDFCTOSBIMSGID001</MessageId>
+    <TransactionId>HDFCTOSBITRNID001</TransactionId>
+    <FirmrootId>HDFCTOSBIFRID001</FirmrootId>
+    <TransactionType>Imps</TransactionType>
+</Message>
