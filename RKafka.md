@@ -108,4 +108,9 @@ for real-time data pipelines and streaming applications, enabling organizations 
 - **Consumer Group:** Ensures each message is processed by only one consumer in the group.  
 - **Broker:** Manages partitions, handles read and write requests.  
 - **Cluster:** Consists of multiple brokers.  
-- **Replica:** Copy of a partition for fault tolerance; includes leader and follower replicas.  
+- **Replica:** Copy of a partition for fault tolerance; includes leader and follower replicas.
+
+FPX - BNM - MALAYSIA
+HDFC - RBI - INDIA
+SBI - RBI - INDIA
+NPP - RBA - AUSTRALIA

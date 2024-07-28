@@ -3,6 +3,10 @@
 The Global Clearing Connector (GC2) is a microservice designed to facilitate payment processing between HDFC Bank (
 Plutus) and various clearing bodies. This document details the architecture, data flow, and design of the GC2 system.
 
+# RealTime Payment Clearing Services
+
+- *Domestic and Cross Border Payments*
+
 # Key Components
 
 # GC2 Microservice:

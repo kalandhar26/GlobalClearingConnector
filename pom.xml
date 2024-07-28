@@ -15,21 +15,11 @@
 	<name>GlobalClearingConnector</name>
 	<description>Demo project for Payment Transactions</description>
 	<modules>
-        <module>HDFC_IMPS</module>
-		<module>HDFC_NEFT</module>
-		<module>SBI_IMPS</module>
-		<module>SBI_NEFT</module>
-        <module>KAFKA_SERVICE</module>
-		<module>HDFC_IMPS</module>
-        <module>RBI_INDIA</module>
-        <module>BNM_MALAYSIA</module>
-		<module>RBA_AUSTRALIA</module>
-        <module>FPX_IMPS</module>
-		<module>FPX_NEFT</module>
-		<module>NPP_IMPS</module>
-		<module>NPP_NEFT</module>
-        <module>GCC_INDIA</module>
-    </modules>
+        <module>CORE</module>
+        <module>E2E</module>
+		<module>CONFIG</module>
+		<module>ORCHESTRATION</module>
+	</modules>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
